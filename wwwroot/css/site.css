@@ -1,0 +1,20 @@
+body {
+    padding-top: 4.5rem;
+}
+
+.navbar-brand {
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    font-size: 1.25rem;
+}
+
+.card {
+    border-radius: 1rem;
+}
+
+.btn {
+    border-radius: 0.5rem;
+}

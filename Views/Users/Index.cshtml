@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DemoProject.Models.User>
+
+@{
+    ViewData["Title"] = "User List";
+}
+
+<h2>User List</h2>
+
+<div class="row mb-3">
+    <div class="col-md-6">
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+    <div class="col-md-6 text-end">
+        <a href="@Url.Action("Create", "Users")" class="btn btn-primary">Add User</a>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Username</td>
+                <td>@user.FullName</td>
+                <td>@user.Email</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Users", new { id = user.Id })" class="btn btn-primary">Edit</a>
+                    <a href="@Url.Action("Delete", "Users", new { id = user.Id })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
